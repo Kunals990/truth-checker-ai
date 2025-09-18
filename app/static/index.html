@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Google Auth</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 FastAPI Google Authentication</h1>
+            <p>Secure authentication with Google OAuth</p>
+        </header>
+
+        <div id="loginSection" class="auth-section">
+            <h2>Welcome! Please sign in</h2>
+            <button id="loginBtn" class="google-btn">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+                Sign in with Google
+            </button>
+        </div>
+
+        <div id="dashboardSection" class="dashboard-section" style="display: none;">
+            <div class="user-info">
+                <img id="userPicture" class="user-avatar" alt="User Avatar">
+                <div class="user-details">
+                    <h3 id="userName"></h3>
+                    <p id="userEmail"></p>
+                </div>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+
+            <div class="dashboard-content">
+                <h2>Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Profile Status</h3>
+                        <p id="profileStatus">Active</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Member Since</h3>
+                        <p id="memberSince"></p>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="updateProfileBtn" class="action-btn">Update Profile</button>
+                    <button id="viewProfileBtn" class="action-btn">View Full Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Profile Modal -->
+        <div id="updateModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Update Profile</h2>
+                <form id="updateForm">
+                    <div class="form-group">
+                        <label for="updateName">Name:</label>
+                        <input type="text" id="updateName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updatePicture">Picture URL:</label>
+                        <input type="url" id="updatePicture">
+                    </div>
+                    <button type="submit" class="submit-btn">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
